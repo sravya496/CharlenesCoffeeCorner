@@ -1,0 +1,43 @@
+public class Product {
+    private String name;
+    private double price;
+    private boolean hasExtraMilk;
+    private boolean hasFoamedMilk;
+    private boolean hasSpecialRoast;
+
+    public Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+        this.hasExtraMilk = false;
+        this.hasFoamedMilk = false;
+        this.hasSpecialRoast = false;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void addExtraMilk() {
+        hasExtraMilk = true;
+    }
+
+    public void addFoamedMilk() {
+        hasFoamedMilk = true;
+    }
+
+    public void addSpecialRoast() {
+        hasSpecialRoast = true;
+    }
+
+    public double calculateExtras() {
+        double extrasTotal = 0;
+        if (hasExtraMilk) extrasTotal += 0.30;
+        if (hasFoamedMilk) extrasTotal += 0.50;
+        if (hasSpecialRoast) extrasTotal += 0.90;
+        return extrasTotal;
+    }
+}
